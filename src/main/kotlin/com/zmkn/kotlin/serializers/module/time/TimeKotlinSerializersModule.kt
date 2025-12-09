@@ -18,11 +18,9 @@ object TimeKotlinSerializersModule {
         )
     }
 
-    fun generateModule(vararg serializersModuleBuilder: SerializersModuleBuilder.() -> Unit): SerializersModule {
-        return SerializersModule {
-            serializersModuleBuilder.forEach {
-                it()
-            }
+    fun generateModule(vararg serializersModuleBuilder: SerializersModuleBuilder.() -> Unit): SerializersModule = SerializersModule {
+        serializersModuleBuilder.forEach {
+            it()
         }
     }
 }
